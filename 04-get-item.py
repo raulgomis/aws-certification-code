@@ -7,9 +7,12 @@ table = dynamodb.Table('rgomis-test2')
 response = table.get_item(
     ConsistentRead=False,
     Key={
-        'pk': 1,
+        'pk': 2,
         'sk': 2
     }
 )
+
+print(response)
+
 item = response['Item']
 print(item)
