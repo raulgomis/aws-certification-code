@@ -11,8 +11,9 @@ response = table.get_item(
         'sk': 2
     }
 )
+ 
+if hasattr(response, 'Item'):
+    print(item)
+else: 
+    print("Element not found")
 
-print(response)
-
-item = response['Item']
-print(item)
