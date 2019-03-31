@@ -1,5 +1,6 @@
 
 import boto3
+import logging
 
 # Get the service resource
 sqs = boto3.resource('sqs')
@@ -9,7 +10,6 @@ queue = sqs.get_queue_by_name(QueueName='rgomis-test')
 
 # Process messages by printing out body and optional author name
 while(True):
-    print("hey")
     for message in queue.receive_messages(
             AttributeNames=[
                 'SentTimestamp'
